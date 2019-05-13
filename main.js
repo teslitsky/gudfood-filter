@@ -149,6 +149,35 @@ function parseCarbs(text) {
   return Number(carbs);
 }
 
+function countShowedItemsForTab(id) {
+  if (!id) {
+    return 0;
+  }
+
+  return $(`div.tab-pane${id}`)
+    .find('.product-row')
+    .not('.hide').length;
+}
+
+function renderBadges() {
+  $('ul.nav-tabs > li').each(function eachTab() {
+    const link = $(this).find('a');
+    link.append(
+      `&nbsp;<span class="badge">${countShowedItemsForTab(
+        link.attr('href'),
+      )}</span>`,
+    );
+  });
+}
+
+function updateBadges() {
+  $('ul.nav-tabs > li').each(function eachTab() {
+    const link = $(this).find('a');
+    const badge = link.find('.badge');
+    badge.html(countShowedItemsForTab(link.attr('href')));
+  });
+}
+
 function filterIngredients() {
   $('.product-row.hide').removeClass('hide');
   $('.product-row')
@@ -174,6 +203,7 @@ function filterIngredients() {
       );
     })
     .addClass('hide');
+  updateBadges();
 }
 
 function renderCaloriesRange() {
@@ -225,7 +255,7 @@ function renderIngredients(ingredients = []) {
   );
 
   return `<div style="padding: 0 0 15px">
-    <h5>Інгредієнти</h5>
+    <h5>Складові</h5>
     ${content}
   </div>`;
 }
@@ -402,4 +432,6 @@ $(document).ready(function ready() {
 
     filterIngredients();
   });
+
+  renderBadges();
 });
