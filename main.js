@@ -4,7 +4,6 @@
 // @TODO: add state
 // @TODO: refactor view + model layers
 // @TODO: add cart total
-// @TODO: add reset button
 const ingredientsSet = new Set();
 const selectedIngredients = new Set();
 
@@ -151,7 +150,6 @@ function parseCarbs(text) {
 }
 
 function filterIngredients() {
-  console.table(filter);
   $('.product-row.hide').removeClass('hide');
   $('.product-row')
     .filter(function filterProducts() {
@@ -162,8 +160,6 @@ function filterIngredients() {
       const ingredients = $(this)
         .attr('ingredients')
         .split(',');
-
-      console.log(hasSelectedIngredients(selectedIngredients, ingredients));
 
       return (
         calories < filter.calories.min ||
@@ -223,11 +219,9 @@ function renderIngredients(ingredients = []) {
       <input type="checkbox" name="ingredients" value="${i}">${i}
     </label>
   </div>`,
-    `<div class="checkbox">
-    <label>
-      <input type="checkbox" name="ingredients" value="all">Всі
-    </label>
-  </div>`,
+    `<div>
+      <button class="btn btn-sm btn-warning" id="resetIngredients">Скинути</button>
+    </div>`,
   );
 
   return `<div style="padding: 0 0 15px">
@@ -391,22 +385,21 @@ $(document).ready(function ready() {
     ingredients: Array.from(ingredientsSet),
   });
 
-  $('input[type=checkbox][value="all"]').click(function clickAll() {
-    $('input:checkbox')
-      .not(this)
-      .prop('checked', this.checked);
+  $('#resetIngredients').click(e => {
+    e.preventDefault();
+    $('input[name="ingredients"]').prop('checked', false);
+    selectedIngredients.clear();
+    filterIngredients();
   });
 
-  $('input[type=checkbox][name="ingredients"]').change(
-    function clickFilterCheckbox() {
-      selectedIngredients.clear();
-      [
-        ...document.querySelectorAll('input[name="ingredients"]:checked'),
-      ].forEach(({ value }) => {
+  $('input[name="ingredients"]').change(function clickFilterCheckbox() {
+    selectedIngredients.clear();
+    [...document.querySelectorAll('input[name="ingredients"]:checked')].forEach(
+      ({ value }) => {
         selectedIngredients.add(value);
-      });
+      },
+    );
 
-      filterIngredients(Array.from(selectedIngredients));
-    },
-  );
+    filterIngredients();
+  });
 });
