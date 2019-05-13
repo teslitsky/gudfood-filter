@@ -1,0 +1,25 @@
+{
+  "name": "GudFood Filter",
+  "description": "GudFood Filter Extension",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "favicon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://orders.gudfood.com.ua/order"
+      ],
+      "js": [
+        "jquery.min.js",
+        "jquery-ui.min.js",
+        "main.js"
+      ],
+      "css": [
+        "jquery-ui.css"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
