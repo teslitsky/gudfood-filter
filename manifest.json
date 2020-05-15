@@ -18,7 +18,7 @@
   "content_scripts": [
     {
       "matches": [
-        "http://orders.gudfood.com.ua/order"
+        "https://orders.gudfood.com.ua/order"
       ],
       "js": [
         "jquery.min.js",
