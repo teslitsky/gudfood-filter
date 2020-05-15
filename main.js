@@ -32,7 +32,7 @@ function hasSelectedIngredients(selected, ingredients) {
 
   const setB = new Set(ingredients);
   return (
-    [...new Set(selected)].filter(x => setB.has(x)).length === selected.size
+    [...new Set(selected)].filter((x) => setB.has(x)).length === selected.size
   );
 }
 
@@ -57,7 +57,7 @@ function parseIngredients(text) {
     .toLowerCase()
     .split(',');
 
-  return ingredients.map(el => {
+  return ingredients.map((el) => {
     // case "соус медово-гірчичний (американська гірчиця, фреш лимону, мед)"
     const openIndex = el.indexOf('(');
     if (openIndex >= 0) {
@@ -154,9 +154,7 @@ function countShowedItemsForTab(id) {
     return 0;
   }
 
-  return $(`div.tab-pane${id}`)
-    .find('.product-row')
-    .not('.hide').length;
+  return $(`div.tab-pane${id}`).find('.product-row').not('.hide').length;
 }
 
 function renderBadges() {
@@ -186,9 +184,7 @@ function filterIngredients() {
       const proteins = $(this).attr('proteins');
       const fats = $(this).attr('fats');
       const carbs = $(this).attr('carbs');
-      const ingredients = $(this)
-        .attr('ingredients')
-        .split(',');
+      const ingredients = $(this).attr('ingredients').split(',');
 
       return (
         calories < filter.calories.min ||
@@ -267,11 +263,8 @@ function renderFilterBox({ calories, proteins, fats, carbs, ingredients }) {
   const carbsContent = renderCarbsRange(carbs);
   const ingredientsContent = renderIngredients(ingredients);
 
-  $('#cart')
-    .parent()
-    .parent()
-    .append(
-      `<div class="panel panel-info">
+  $('#cart').parent().parent().append(
+    `<div class="panel panel-info">
         <div class="panel-heading">
           <h3 class="panel-title">Фільтр</h3>
         </div>
@@ -283,7 +276,7 @@ function renderFilterBox({ calories, proteins, fats, carbs, ingredients }) {
           ${ingredientsContent}
         </div>
       </div>`,
-    );
+  );
 
   const caloriesSlider = $('#slider-range-calories');
   caloriesSlider.slider({
@@ -381,14 +374,11 @@ function renderFilterBox({ calories, proteins, fats, carbs, ingredients }) {
 $(document).ready(function ready() {
   $('.product-row').each(function eachRow() {
     const current = $(this);
-    const text = current
-      .find('.media-body .col-md-8')
-      .text()
-      .trim();
+    const text = current.find('.media-body .col-md-8').text().trim();
 
     const ingredients = parseIngredients(text);
     current.attr('ingredients', ingredients);
-    ingredients.forEach(ingredient => ingredientsSet.add(ingredient));
+    ingredients.forEach((ingredient) => ingredientsSet.add(ingredient));
 
     const calories = parseCalories(text);
     caloriesMax = calories > caloriesMax ? calories : caloriesMax;
@@ -415,7 +405,7 @@ $(document).ready(function ready() {
     ingredients: Array.from(ingredientsSet),
   });
 
-  $('#resetIngredients').click(e => {
+  $('#resetIngredients').click((e) => {
     e.preventDefault();
     $('input[name="ingredients"]').prop('checked', false);
     selectedIngredients.clear();
