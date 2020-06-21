@@ -7,7 +7,6 @@
     "default_icon": "favicon.png"
   },
   "permissions": [
-    "tabs"
   ],
   "background": {
     "scripts": [

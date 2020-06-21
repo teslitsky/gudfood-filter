@@ -7,6 +7,12 @@
 ## Install
 [][link-cws] [<img valign="middle" src="https://img.shields.io/chrome-web-store/v/fiaebiaaakpncdnaoplmcgbgopmnhnlc.svg">][link-cws]
 
+## Development
+
+### Pack extension
+
+TODO: how to pack extension locally
+
 ## License
 
 MIT
