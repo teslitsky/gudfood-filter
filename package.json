@@ -4,9 +4,14 @@
   "description": "GudFood Filter extension",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint"
   },
-  "keywords": ["chrome", "extension", "gudfood"],
+  "keywords": [
+    "chrome",
+    "extension",
+    "gudfood"
+  ],
   "author": "Dmitry Teslitsky <dmitryteslitsky@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -16,21 +21,6 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-security": "1.4.0",
     "prettier": "2.1.2"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "browser": true,
-      "jquery": true
-    },
-    "plugins": [
-      "security"
-    ],
-    "extends": [
-      "airbnb-base",
-      "plugin:security/recommended",
-      "prettier"
-    ]
   },
   "prettier": {
     "trailingComma": "all",
