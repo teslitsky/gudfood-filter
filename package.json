@@ -17,7 +17,7 @@
   "author": "Dmitry Teslitsky <dmitryteslitsky@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/chrome": "0.0.200",
+    "@types/chrome": "0.0.213",
     "@types/jest": "29.2.0",
     "@types/jquery": "3.5.14",
     "@types/jqueryui": "1.12.16",
