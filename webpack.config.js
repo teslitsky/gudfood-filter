@@ -7,8 +7,14 @@ module.exports = {
     background: path.resolve(__dirname, 'src', 'background.ts'),
     main: path.resolve(__dirname, 'src', 'main.ts'),
   },
+  stats: {
+    all: false,
+    errors: true,
+    builtAt: true,
+    assets: true,
+  },
   output: {
-    path: path.join(__dirname, './dist'),
+    path: path.join(__dirname, './build'),
     filename: '[name].js',
   },
   resolve: {
