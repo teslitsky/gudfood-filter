@@ -1,5 +1,6 @@
 const { readFileSync, existsSync, mkdirSync } = require('fs');
 const { parse, resolve } = require('path');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const AdmZip = require('adm-zip');
 
 try {

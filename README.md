@@ -9,7 +9,6 @@
 
 [Install extension from Chrome Web Store](https://chrome.google.com/webstore/detail/gudfood-filter/fiaebiaaakpncdnaoplmcgbgopmnhnlc)
 
-
 ## Development
 
 ### Pack extension
