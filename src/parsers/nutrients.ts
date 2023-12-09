@@ -6,7 +6,7 @@ const zero = {
   carbs: 0,
 } as NutrientsCount;
 
-export function parseNutrients(text = ''): NutrientsCount {
+export default function parseNutrients(text = ''): NutrientsCount {
   if (!text) {
     return zero;
   }

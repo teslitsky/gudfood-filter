@@ -1,4 +1,4 @@
-export function parseIngredients(text = ''): string[] {
+export default function parseIngredients(text = ''): string[] {
   if (!text) {
     return [];
   }

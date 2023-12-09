@@ -6,15 +6,17 @@
 > Browser extension that adds useful features to GUDFood site
 
 ## Install
-
 [Install extension from Chrome Web Store](https://chrome.google.com/webstore/detail/gudfood-filter/fiaebiaaakpncdnaoplmcgbgopmnhnlc)
 
 ## Development
+```bash
+npm run watch
+```
 
 ### Pack extension
-
-TODO: how to pack extension locally
+```bash
+npm run pack
+```
 
 ## License
-
 MIT

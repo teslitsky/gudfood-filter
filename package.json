@@ -42,18 +42,5 @@
   "prettier": {
     "trailingComma": "all",
     "singleQuote": true
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "testEnvironment": "node",
-    "clearMocks": true
   }
 }
