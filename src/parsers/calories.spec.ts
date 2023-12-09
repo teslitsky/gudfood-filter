@@ -1,4 +1,4 @@
-import { parseCalories } from './calories';
+import parseCalories from './calories';
 
 describe('Calories parser', () => {
   describe('should parse calories from valid text', () => {

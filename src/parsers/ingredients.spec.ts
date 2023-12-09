@@ -1,4 +1,4 @@
-import { parseIngredients } from './ingredients';
+import parseIngredients from './ingredients';
 
 describe('Ingredients parser', () => {
   it('should parse ingredients from valid text', () => {

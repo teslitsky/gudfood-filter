@@ -1,4 +1,4 @@
-import { parseNutrients } from './nutrients';
+import parseNutrients from './nutrients';
 import { NutrientsCount } from '../interfaces/nutrients-count';
 
 describe('Nutrients parser', () => {

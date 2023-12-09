@@ -1,6 +1,6 @@
 const CALORIES_LABEL = 'ккал.';
 
-export function parseCalories(text = ''): number {
+export default function parseCalories(text = ''): number {
   const parsedText = text.toLowerCase().trim();
 
   if (!parsedText.includes(CALORIES_LABEL)) {

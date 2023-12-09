@@ -1,7 +1,7 @@
-import { parseNutrients } from './parsers/nutrients';
-import { Nutrients } from './interfaces/nutrients';
-import { parseCalories } from './parsers/calories';
-import { parseIngredients } from './parsers/ingredients';
+import parseNutrients from './parsers/nutrients';
+import Nutrients from './interfaces/nutrients';
+import parseCalories from './parsers/calories';
+import parseIngredients from './parsers/ingredients';
 
 const ingredientsSet = new Set<string>();
 const selectedIngredients = new Set<string>();
