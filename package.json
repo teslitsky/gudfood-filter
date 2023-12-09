@@ -7,7 +7,9 @@
     "test": "jest",
     "lint": "eslint",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack --config webpack.config.js --watch"
+    "watch": "webpack --config webpack.config.js --watch",
+    "pack": "node pack.js",
+    "repack": "npm run build && npm run pack"
   },
   "keywords": [
     "chrome",
@@ -21,6 +23,7 @@
     "@types/jest": "29.2.0",
     "@types/jquery": "3.5.14",
     "@types/jqueryui": "1.12.16",
+    "adm-zip": "0.5.10",
     "copy-webpack-plugin": "11.0.0",
     "eslint": "8.26.0",
     "eslint-config-airbnb-base": "15.0.0",
