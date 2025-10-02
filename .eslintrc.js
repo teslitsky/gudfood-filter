@@ -4,7 +4,6 @@ module.exports = {
     browser: true,
     jquery: true,
     node: true,
-    jest: true,
     webextensions: true,
   },
   plugins: ['security'],
