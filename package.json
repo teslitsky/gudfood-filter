@@ -4,7 +4,7 @@
   "description": "GudFood Filter extension",
   "main": "index.js",
   "scripts": {
-    "test": "node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=./coverage/lcov.info --import tsx src/**/*.spec.ts",
+    "test": "node --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=lcov.info  --import tsx src/**/*.spec.ts",
     "lint": "eslint --fix",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --config webpack.config.js --watch",
